@@ -22,20 +22,42 @@ import {
 } from "@/components/ui/select";
 import { format } from "date-fns";
 import { SelectGroup, SelectLabel } from "@radix-ui/react-select";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ReservationForm = () => {
   const [date, setDate] = useState();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  const showToastMessage = (e) => {
+    e.preventDefault();
+    if (firstName === "" && lastName === "") {
+      toast.error("First and last name are required !");
+    }
+    if (firstName != "" && lastName != "")
+      toast.success("Your table is ready !");
+  };
   return (
     <form className="flex flex-col gap-y-10">
+      <ToastContainer />
       <div className="grid gap-[30px]">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
           <div>
             <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" type="text" />
+            <Input
+              id="firstname"
+              onChange={(e) => setFirstName(e.target.value)}
+              type="text"
+            />
           </div>
           <div>
             <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" type="text" />
+            <Input
+              id="lastname"
+              onChange={(e) => setLastName(e.target.value)}
+              type="text"
+            />
           </div>
         </div>
 
@@ -86,7 +108,9 @@ const ReservationForm = () => {
           </div>
         </div>
       </div>
+
       <Button
+        onClick={showToastMessage}
         variant="orange"
         className="uppercase w-full xl:w-auto xl:self-end rounded-none"
       >

@@ -27,6 +27,7 @@
     "react-leaflet": "^4.2.1",
     "react-responsive": "^9.0.2",
     "react-scroll": "^1.9.0",
+    "react-toastify": "^10.0.4",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7"
   },

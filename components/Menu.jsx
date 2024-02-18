@@ -8,6 +8,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 //framer motion
 import { motion } from "framer-motion";
 import { fadeIn } from "@/variants";
+import { toast } from "react-toastify";
 
 const menu = [
   {
