@@ -11,7 +11,7 @@ import { FaBookReader } from "react-icons/fa";
 import { AiTwotoneMessage } from "react-icons/ai";
 
 // icons for menu
-import { TiThMenu } from "react-icons/ti";
+import { CgMenuLeftAlt } from "react-icons/cg";
 
 import { CgClose } from "react-icons/cg";
 
@@ -55,7 +55,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
         className="cursor-pointer outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <TiThMenu className="text-3xl text-white transition-all duration-200 " />
+        <CgMenuLeftAlt className="text-3xl text-white transition-all duration-200 " />
       </div>
       <aside
         className={`bg-black-deep fixed z-20 w-full p-10 top-0 bottom-0 transition-all duration-500 ${

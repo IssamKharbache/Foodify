@@ -14,7 +14,7 @@ const Footer = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.2 }}
-      className="bg-black-deep text-white pt-16"
+      className="bg-black-deep text-white pt-16 "
     >
       <div className="container mx-auto">
         <div className="flex flex-col justify-between xl:flex-row">

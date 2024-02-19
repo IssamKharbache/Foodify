@@ -19,7 +19,7 @@ const About = () => {
         viewport={{ once: false, amount: 0.2 }}
         className="xl:pl-[135px] "
       >
-        <h1 className="mb-9">Let's talk about Foodify</h1>
+        <h1 className="mb-9">What's about Foodify</h1>
         <p className="mb-8">
           Foodify is a contemporary culinary destination that redefines the
           dining experience through a fusion of innovation and tradition.
@@ -47,11 +47,11 @@ const About = () => {
         viewport={{ once: false, amount: 0.2 }}
       >
         <Image
-          src="/about/img.png"
+          src="/about/img.jpg"
           width={705}
           height={771}
           alt=""
-          className="hidden xl:flex"
+          className="hidden xl:flex rounded-md"
         />
       </motion.div>
     </section>

@@ -4,11 +4,12 @@ import { fadeIn } from "@/variants";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   return (
     <section
-      className="bg-body  bg-no-repeat relative xl:bg-cover  py-40 pb-32 xl:py-0 "
+      className="bg-body h-screen md:h-full   bg-no-repeat relative xl:bg-cover  py-52  pb-32 xl:py-0  "
       id="home"
     >
       <div className="container mx-auto">
@@ -51,9 +52,11 @@ const Hero = () => {
               whileInView={"show"}
               viewport={{ once: false, amount: 0.4 }}
             >
-              <Button variant="default">
-                LET'S M <p className="text-white uppercase">eat</p>
-              </Button>
+              <Link to="reservation" spy={true} smooth={true} duration={500}>
+                <Button variant="default">
+                  LET'S M <p className="text-white uppercase">eat</p>
+                </Button>
+              </Link>
             </motion.div>
           </div>
           {/* IMAGE */}
@@ -65,7 +68,7 @@ const Hero = () => {
             className="hidden xl:flex xl:absolute xl:top-[200px] xl:right-11"
           >
             <Image
-              src="/hero/heroplate.jpg"
+              src="/hero/plates.jpg"
               width={756}
               className="rounded-full"
               height={602}

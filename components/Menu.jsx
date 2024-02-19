@@ -4,11 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 //icons
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowRoundForward, IoMdCloseCircleOutline } from "react-icons/io";
 //framer motion
 import { motion } from "framer-motion";
 import { fadeIn } from "@/variants";
-import { toast } from "react-toastify";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  Button,
+} from "@nextui-org/react";
+import { useState } from "react";
 
 const menu = [
   {
@@ -34,6 +40,7 @@ const menu = [
 ];
 
 const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <section className="relative py-12 xl:py-24 bg-white" id="menu">
       <div className="container mx-auto">
@@ -45,14 +52,67 @@ const Menu = () => {
           className=" max-w-[570px] mx-auto text-center pb-4 xl:text-right pt-5  "
         >
           <h2 className="text-black mb-3 ">Favorite Menu</h2>
-          <Link
-            className="text-black hover:opacity-70 group justify-center hover:text-black flex xl:justify-end items-center mb-16"
-            href="menu"
+
+          <Popover
+            isOpen={isOpen}
+            onOpenChange={(open) => setIsOpen(open)}
+            className="rounded-md bg-black-deep text-white"
           >
-            View All
-            <IoIosArrowRoundForward className="text-3xl group-hover:rotate-45 duration-500" />
-          </Link>
+            <PopoverTrigger>
+              <Button>
+                <Button
+                  onClick={() => setIsOpen(true)}
+                  className="text-black hover:opacity-70 group justify-center hover:text-black flex xl:justify-end items-center mb-16"
+                >
+                  View All
+                  <IoIosArrowRoundForward className="text-3xl group-hover:rotate-45 duration-500" />
+                </Button>
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <div className="px-1 py-2 flex flex-col gap-y-4 ">
+                <div className="flex justify-between">
+                  <div className="text-small font-bold">Main Menu</div>
+                  <IoMdCloseCircleOutline
+                    className="text-2xl text-end cursor-pointer"
+                    onClick={() => setIsOpen(false)}
+                  />
+                </div>
+
+                <div>
+                  <img src="/menu.jpg" className="rounded-md" alt="" />
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
         </motion.div>
+        {/* <Popover
+            isOpen={isOpen}
+            onOpenChange={(open) => setIsOpen(open)}
+            className="rounded-md bg-black text-white"
+          >
+            <PopoverTrigger>
+              <Button className="text-black hover:opacity-70 group justify-center hover:text-black flex xl:justify-end items-center mb-16">
+                View All
+                <IoIosArrowRoundForward className="text-3xl group-hover:rotate-45 duration-500" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <div className="px-1 py-2 flex flex-col gap-y-4 ">
+                <div className="flex justify-between">
+                  <div className="text-small font-bold">Main Menu</div>
+                  <IoMdCloseCircleOutline
+                    className="text-2xl text-end cursor-pointer"
+                    onClick={() => setIsOpen(false)}
+                  />
+                </div>
+
+                <div>
+                  <img src="/menu.jpg" className="rounded-md" alt="" />
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover> */}
         {/* MENU GRID */}
         <motion.div
           variants={fadeIn("up", 0.4)}
