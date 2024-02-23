@@ -5,16 +5,17 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Link } from "react-scroll";
+import ScrollEffect from "./ScrollEffect";
 
 const Hero = () => {
   return (
     <section
-      className="bg-body h-screen md:h-full   bg-no-repeat relative xl:bg-cover  py-52  pb-32 xl:py-0  "
+      className="bg-body h-screen  bg-no-repeat relative xl:bg-cover  py-32 pb-32 xl:py-0  "
       id="home"
     >
       <div className="container mx-auto">
         {/* TEXT and IMAGE */}
-        <div className="flex items-center xl:h-[960px]">
+        <div className="flex items-center pb-[17px] md:pb-[250px]  xl:h-[960px]">
           {/* TEXT */}
           <div className="w-full xl:max-w-[460px] text-center xl:text-left">
             <motion.h1
@@ -65,7 +66,7 @@ const Hero = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.1 }}
-            className="hidden xl:flex xl:absolute xl:top-[200px] xl:right-11"
+            className="hidden xl:flex xl:absolute xl:top-[110px] xl:right-2"
           >
             <Image
               src="/hero/plates.jpg"
@@ -76,6 +77,7 @@ const Hero = () => {
               alt=""
             />
           </motion.div>
+          <ScrollEffect />
         </div>
       </div>
     </section>

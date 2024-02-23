@@ -15,6 +15,7 @@ import {
   Button,
 } from "@nextui-org/react";
 import { useState } from "react";
+import ScrollEffect from "./ScrollEffect";
 
 const menu = [
   {
@@ -42,15 +43,16 @@ const menu = [
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <section className="relative py-12 xl:py-24 bg-white" id="menu">
+    <motion.section
+      className="relative py-12 xl:py-24 bg-white"
+      id="menu"
+      variants={fadeIn("up", 0.3)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.2 }}
+    >
       <div className="container mx-auto">
-        <motion.div
-          variants={fadeIn("left", 0.3)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.2 }}
-          className=" max-w-[570px] mx-auto text-center pb-4 xl:text-right pt-5  "
-        >
+        <div className=" max-w-[570px] mx-auto text-center pb-4 xl:text-right pt-5  ">
           <h2 className="text-black mb-3 ">Favorite Menu</h2>
 
           <Popover
@@ -85,37 +87,11 @@ const Menu = () => {
               </div>
             </PopoverContent>
           </Popover>
-        </motion.div>
-        {/* <Popover
-            isOpen={isOpen}
-            onOpenChange={(open) => setIsOpen(open)}
-            className="rounded-md bg-black text-white"
-          >
-            <PopoverTrigger>
-              <Button className="text-black hover:opacity-70 group justify-center hover:text-black flex xl:justify-end items-center mb-16">
-                View All
-                <IoIosArrowRoundForward className="text-3xl group-hover:rotate-45 duration-500" />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent>
-              <div className="px-1 py-2 flex flex-col gap-y-4 ">
-                <div className="flex justify-between">
-                  <div className="text-small font-bold">Main Menu</div>
-                  <IoMdCloseCircleOutline
-                    className="text-2xl text-end cursor-pointer"
-                    onClick={() => setIsOpen(false)}
-                  />
-                </div>
+        </div>
 
-                <div>
-                  <img src="/menu.jpg" className="rounded-md" alt="" />
-                </div>
-              </div>
-            </PopoverContent>
-          </Popover> */}
         {/* MENU GRID */}
         <motion.div
-          variants={fadeIn("up", 0.4)}
+          variants={fadeIn("up", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.2 }}
@@ -155,8 +131,9 @@ const Menu = () => {
             );
           })}
         </motion.div>
+        <ScrollEffect arrowColor="text-black right-0" />
       </div>
-    </section>
+    </motion.section>
   );
 };
 
