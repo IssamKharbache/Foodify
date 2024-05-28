@@ -51,7 +51,7 @@ const About = () => {
           width={705}
           height={771}
           alt=""
-          className="hidden xl:flex rounded-md"
+          className="hidden xl:flex rounded-md mb-6"
         />
       </motion.div>
     </section>
