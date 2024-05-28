@@ -21,21 +21,25 @@ const menu = [
     img: "/menu/items1.png",
     title: "Tiny Tangy Spaghetti Twirl",
     price: "$78.00",
+    priceBeforeDiscount: "95.98$",
   },
   {
     img: "/menu/item2.jpeg",
     title: "Flame-Grilled Classic Burger",
     price: "$42.00",
+    priceBeforeDiscount: "52.99$",
   },
   {
     img: "/menu/item3.jpg",
     title: "Wood-Fired Margherita Mastery",
     price: "$32.00",
+    priceBeforeDiscount: "45.00$",
   },
   {
     img: "/menu/item4.jpg",
     title: "Summery Strawberry Delight",
     price: "$11.00",
+    priceBeforeDiscount: "15.99$",
   },
 ];
 
@@ -51,7 +55,7 @@ const Menu = () => {
       viewport={{ once: false, amount: 0.2 }}
     >
       <div className="container mx-auto">
-        <div className=" max-w-[570px] mx-auto text-center pb-4 xl:text-right pt-5  ">
+        <div className=" max-w-[570px] mx-auto text-center pb-4 lg:text-right pt-5  ">
           <h2 className="text-black mb-3 ">Favorite Menu</h2>
 
           <Popover
@@ -60,13 +64,13 @@ const Menu = () => {
             className="rounded-md bg-black-deep text-white"
           >
             <PopoverTrigger>
-              <div>
+              <div className="flex justify-center lg:justify-end">
                 <Button
                   onClick={() => setIsOpen(true)}
-                  className="text-black hover:opacity-70 group justify-center hover:text-black flex xl:justify-end items-center mb-16"
+                  className="text-black hover:opacity-70 group  hover:text-black flex  items-center mb-16"
                 >
                   View All
-                  <IoIosArrowRoundForward className="text-3xl group-hover:rotate-45 duration-500" />
+                  <IoIosArrowRoundForward className="text-3xl group-hover:rotate-45 duration-500 " />
                 </Button>
               </div>
             </PopoverTrigger>
@@ -118,12 +122,18 @@ const Menu = () => {
                 {/* TITLE AND PRICE */}
                 <div className="pt-[20px] pb-[28px] px-[30px]">
                   <Link href="/">
-                    <h3 className="font-poppins text-black mb-[14px]">
+                    <h3 className="font-poppins text-black mb-[14px] line-clamp-2">
                       {item.title}
                     </h3>
                   </Link>
-                  <div className="text-xl font-poppins font-semibold text-body">
-                    {item.price}
+                  <div className=" ">
+                    <p className="text-green text-xl font-poppins font-semibold">
+                      {" "}
+                      {item.price}
+                    </p>
+                    <s className="text-deepRed text-sm font-semibold">
+                      {item.priceBeforeDiscount}
+                    </s>
                   </div>
                 </div>
               </div>
