@@ -6,7 +6,6 @@ import { Link as LinkScroll } from "react-scroll";
 import Image from "next/image";
 import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa6";
 import { RiTwitterXLine } from "react-icons/ri";
-import ScrollEffect from "./ScrollEffect";
 
 const Footer = () => {
   return (
@@ -81,9 +80,12 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <LinkScroll to="home" spy={true} smooth={true} duration={500}>
-              <ScrollEffect arrowColor="text-white pb-[40px] rotate-180" />
-            </LinkScroll>
+            <LinkScroll
+              to="home"
+              spy={true}
+              smooth={true}
+              duration={500}
+            ></LinkScroll>
           </div>
           {/* Copyright */}
         </div>

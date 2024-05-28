@@ -5,21 +5,17 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Link } from "react-scroll";
-import ScrollEffect from "./ScrollEffect";
 
 const Hero = () => {
   return (
-    <section
-      className="bg-body h-screen  bg-no-repeat relative xl:bg-cover  py-32 pb-32 xl:py-0  "
-      id="home"
-    >
-      <div className="container mx-auto">
+    <section className="bg-body min-h-screen flex justify-center" id="home">
+      <div className="flex">
         {/* TEXT and IMAGE */}
-        <div className="flex items-center pb-[17px] md:pb-[250px]  xl:h-[960px]">
+        <div className="flex ml-0 md:ml-8  items-center justify-center gap-16">
           {/* TEXT */}
-          <div className="w-full xl:max-w-[460px] text-center xl:text-left">
+          <div className="">
             <motion.h1
-              className="text-white mb-7"
+              className="text-white mb-7 lg:text-left text-center "
               variants={fadeIn("down", 0.2)}
               initial="hidden"
               whileInView={"show"}
@@ -34,7 +30,7 @@ const Hero = () => {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.4 }}
-              className="text-white font-semibold mb-7"
+              className="text-white font-semibold text-center lg:text-left "
             >
               By : <span className="text-black">FOODIFY</span>
             </motion.p>
@@ -43,7 +39,7 @@ const Hero = () => {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.4 }}
-              className="text-white mb-12 max-w-lg mx-auto  xl:max-w-none xl:mx-0"
+              className="text-white mb-8 text-center lg:text-left "
             >
               Welcome to FOODIFY ! Where every meal is a celebration!
             </motion.p>
@@ -53,7 +49,13 @@ const Hero = () => {
               whileInView={"show"}
               viewport={{ once: false, amount: 0.4 }}
             >
-              <Link to="reservation" spy={true} smooth={true} duration={500}>
+              <Link
+                to="reservation"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className="flex justify-center lg:justify-start"
+              >
                 <Button variant="default">
                   LET'S M <p className="text-white uppercase">eat</p>
                 </Button>
@@ -66,7 +68,7 @@ const Hero = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.1 }}
-            className="hidden xl:flex xl:absolute xl:top-[110px] xl:right-2"
+            className="hidden lg:flex"
           >
             <Image
               src="/hero/plates.jpg"
@@ -77,7 +79,6 @@ const Hero = () => {
               alt=""
             />
           </motion.div>
-          <ScrollEffect />
         </div>
       </div>
     </section>

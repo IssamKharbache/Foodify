@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "@/variants";
 import ReservationForm from "./ReservationForm";
-import ScrollEffect from "./ScrollEffect";
+
 const Reservation = () => {
   return (
     <motion.section
@@ -24,7 +24,6 @@ const Reservation = () => {
         <h2 className="text-white mb-9 capitalize">Make a reservation</h2>
         <ReservationForm />
       </motion.div>
-      <ScrollEffect arrowColor="text-white hidden md:flex" />
     </motion.section>
   );
 };

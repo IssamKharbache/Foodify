@@ -15,7 +15,6 @@ import {
   Button,
 } from "@nextui-org/react";
 import { useState } from "react";
-import ScrollEffect from "./ScrollEffect";
 
 const menu = [
   {
@@ -61,7 +60,7 @@ const Menu = () => {
             className="rounded-md bg-black-deep text-white"
           >
             <PopoverTrigger>
-              <Button>
+              <div>
                 <Button
                   onClick={() => setIsOpen(true)}
                   className="text-black hover:opacity-70 group justify-center hover:text-black flex xl:justify-end items-center mb-16"
@@ -69,7 +68,7 @@ const Menu = () => {
                   View All
                   <IoIosArrowRoundForward className="text-3xl group-hover:rotate-45 duration-500" />
                 </Button>
-              </Button>
+              </div>
             </PopoverTrigger>
             <PopoverContent>
               <div className="px-1 py-2 flex flex-col gap-y-4 ">
@@ -131,7 +130,6 @@ const Menu = () => {
             );
           })}
         </motion.div>
-        <ScrollEffect arrowColor="text-black right-0" />
       </div>
     </motion.section>
   );
